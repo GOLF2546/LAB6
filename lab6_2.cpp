@@ -1,6 +1,39 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
+const double PI = 22.00/7.00;
+double deg2rad(float a){
+    return a*(PI/180.00);
+}
+double  rad2deg(double b){
+    return b*(180.00/PI);
+}
+double findXComponent(double x , double y ,double z,double t){
+    double a,b,c;
+    a = x*cos(z);
+    b = y*cos(t);
+    c = a+b;
+    return c;
+}
+double findYComponent(double x , double y ,double z,double t){
+    double a,b,c;
+    a = x*sin(z);
+    b = y*sin(t);
+    c = a+b;
+    return c;
+}
+double pythagoras(double a , double b){
+    double c;
+    c = sqrt(pow(a,2)+pow(b,2));
+    return c;
+}
+void showResult(double a,double b){
+    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
+    cout << "Length of the resultant vector = " << a << endl;
+    cout << "Direction of the resultant vector (deg) = " << b << endl;
+    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
+}
+
 
 int main(){
     double l1,l2,a1,a2,xcomp,ycomp,result_vec_length,result_vec_direction;
